@@ -34,7 +34,7 @@ def string_query(req):
     return HttpResponse("")
 
 
-# 获取请求体中的表单数据
+# 获取请求体中的表单数据-----
 def req_body(req):
 
     hobby = req.POST.get('hobby')
