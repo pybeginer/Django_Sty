@@ -24,7 +24,7 @@ def test(request, year, city):
     return HttpResponse("天气")
 
 
-# 获取查询参数
+# 获取查询参数的方法
 def string_query(req):
     a = req.GET.get("a")
     # a1 = req.GET.getlist("a")
@@ -34,7 +34,7 @@ def string_query(req):
     return HttpResponse("")
 
 
-# 获取请求体表单数据
+# 获取请求体中的表单数据
 def req_body(req):
 
     hobby = req.POST.get('hobby')
@@ -44,7 +44,7 @@ def req_body(req):
     return HttpResponse('req_body')
 
 
-# 获取请求体非表单数据
+# 获取请求体中的非表单数据
 def body_json(req):
     data_bit = req.body
     data_str = data_bit.decode()
