@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -21,3 +23,27 @@ def test(request, year, city):
     return HttpResponse("天气")
 
 
+def string_query(req):
+    a = req.GET.get("a")
+    # a1 = req.GET.getlist("a")
+    b = req.GET.get("b")
+    a2 = req.GET.getlist("a")
+
+    return HttpResponse("")
+
+
+def req_body(req):
+
+    hobby = req.POST.get('hobby')
+    hobby_list = req.POST.getlist('hobby')
+    name = req.POST.get('name')
+
+    return HttpResponse('req_body')
+
+
+def body_json(req):
+    data_bit = req.body
+    data_str = data_bit.decode()
+    data_json = json.loads(data_str)
+
+    return HttpResponse("body_json")
