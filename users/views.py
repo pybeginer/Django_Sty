@@ -48,3 +48,11 @@ def body_json(req):
     data_json = json.loads(data_str)
 
     return HttpResponse("body_json")
+
+
+def request_head(req):
+
+    content_type = req.META.get('CONTENT_TYPE')
+    print(content_type)
+    print(req.user, req.method)
+    return HttpResponse("req_head")
